@@ -25,14 +25,3 @@ python3 -m http.server 8000
 
 Then open <http://localhost:8000>.
 
-## Deploy
-
-GitHub Pages deploys from the `main` branch root. In the repo's **Settings → Pages**, set the source to `main` / `(root)` and the custom domain to `sevenoaks.digital`, then turn on **Enforce HTTPS** once the certificate is issued.
-
-DNS lives at Namecheap. Web records:
-
-- `@` A records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-- `www` CNAME → `sevenoaksdigital.github.io`
-- TXT record from the GitHub org's Pages domain verification
-
-**Do not change the email records** (MX, SPF, DKIM, DMARC) — the domain's mailboxes are in use.
