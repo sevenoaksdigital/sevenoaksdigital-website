@@ -198,24 +198,37 @@
     </div>
     <svg class="treeline" viewBox="0 0 1200 150" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false">
       <defs>
+        <!-- Spreading oak: flared trunk, three branches, wide lobed canopy. Base at (0,0). -->
         <g id="oak">
-          <rect x="-4" y="-34" width="8" height="34" />
-          <circle cx="0" cy="-62" r="27" />
-          <circle cx="-24" cy="-46" r="21" />
-          <circle cx="24" cy="-46" r="21" />
-          <circle cx="-14" cy="-72" r="18" />
-          <circle cx="15" cy="-71" r="18" />
+          <path d="M-13 0 Q-5 -3 -5 -14 L-5 -26 L5 -26 L5 -14 Q5 -3 13 0 Z" />
+          <g fill="none" stroke-linecap="round" stroke-width="6">
+            <path d="M-2 -22 Q-12 -30 -26 -42" />
+            <path d="M2 -22 Q12 -32 24 -44" />
+            <path d="M0 -24 L2 -50" stroke-width="5" />
+          </g>
+          <circle cx="-44" cy="-49" r="12" />
+          <circle cx="-31" cy="-58" r="16" />
+          <circle cx="-14" cy="-66" r="17" />
+          <circle cx="4" cy="-68" r="18" />
+          <circle cx="21" cy="-63" r="16" />
+          <circle cx="35" cy="-55" r="15" />
+          <circle cx="46" cy="-47" r="10" />
+          <circle cx="-24" cy="-47" r="12" />
+          <circle cx="0" cy="-53" r="14" />
+          <circle cx="24" cy="-48" r="12" />
+          <circle cx="-37" cy="-43" r="8" />
+          <circle cx="39" cy="-42" r="8" />
         </g>
       </defs>
-      <g fill="currentColor">
-        <use href="#oak" transform="translate(130 144) scale(0.8)" />
-        <use href="#oak" transform="translate(285 144) scale(1.1)" />
-        <use href="#oak" transform="translate(440 144) scale(0.92)" />
-        <use href="#oak" transform="translate(600 144) scale(1.36)" />
-        <use href="#oak" transform="translate(760 144) scale(1)" />
-        <use href="#oak" transform="translate(915 144) scale(1.18)" />
-        <use href="#oak" transform="translate(1070 144) scale(0.85)" />
-        <rect x="0" y="140" width="1200" height="10" />
+      <g fill="currentColor" stroke="currentColor">
+        <path d="M0 150 L0 138 Q300 126 600 134 Q900 142 1200 130 L1200 150 Z" stroke="none" />
+        <use href="#oak" transform="translate(95 138) scale(0.8)" />
+        <use href="#oak" transform="translate(262 134) scale(1)" />
+        <use href="#oak" transform="translate(425 133) scale(0.85)" />
+        <use href="#oak" transform="translate(600 135) scale(1.2)" />
+        <use href="#oak" transform="translate(775 138) scale(0.9)" />
+        <use href="#oak" transform="translate(940 136) scale(1.05)" />
+        <use href="#oak" transform="translate(1105 132) scale(0.8)" />
       </g>
     </svg>
   </header>
