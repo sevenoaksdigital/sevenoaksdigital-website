@@ -4,258 +4,87 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Seven Oaks Digital</title>
-  <meta name="description" content="Seven Oaks Digital is an independent software studio in Silver Spring, Maryland, developing and publishing mobile games and apps for iOS and Android.">
+  <meta name="description" content="Seven Oaks Digital is an independent software studio in Silver Spring, Maryland. We make mobile games and apps for iPhone and Android, starting with LEXSUM.">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#09110b">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://sevenoaks.digital/">
-  <style>
-    :root {
-      /* Oak palette: forest night, bark, moss and acorn gold */
-      --sky-top: #09110b;
-      --sky-bottom: #1f3d29;
-      --sky-text: #f1ecdc;
-      --sky-muted: #bfc6b0;
-      --star: #e9cf8c;
-      --silhouette: #050a07;
-
-      --bg: #eef0e4;
-      --surface: #f9faf3;
-      --border: #d3d7c2;
-      --text: #1c261d;
-      --muted: #4a5646;
-      --link: #6e4a12;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f1f14;
-        --surface: #162c1e;
-        --border: #244730;
-        --text: #ebe9dd;
-        --muted: #b0b8a3;
-        --link: #e3c47c;
-      }
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    html { -webkit-text-size-adjust: 100%; }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 1.0625rem;
-      line-height: 1.6;
-    }
-
-    .wrap {
-      max-width: 44rem;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    /* ---------- Night-sky header ---------- */
-    .sky {
-      position: relative;
-      color: var(--sky-text);
-      background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bottom) 100%);
-      overflow: hidden;
-    }
-
-    .sky::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.85;
-      background-image:
-        radial-gradient(1px 1px at 12px 18px, var(--star) 50%, transparent 51%),
-        radial-gradient(1px 1px at 83px 61px, var(--star) 50%, transparent 51%),
-        radial-gradient(1.5px 1.5px at 41px 104px, var(--star) 50%, transparent 51%),
-        radial-gradient(1px 1px at 137px 33px, var(--star) 50%, transparent 51%),
-        radial-gradient(1px 1px at 168px 121px, var(--star) 50%, transparent 51%),
-        radial-gradient(1.5px 1.5px at 201px 77px, var(--star) 50%, transparent 51%);
-      background-size: 223px 151px, 197px 173px, 263px 139px, 241px 211px, 281px 163px, 317px 229px;
-    }
-
-    .sky::after {
-      /* a few brighter stars with a soft glow */
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        radial-gradient(2px 2px at 78% 22%, #fff8e1 50%, transparent 51%),
-        radial-gradient(6px 6px at 78% 22%, rgba(255, 240, 200, 0.35), transparent 70%),
-        radial-gradient(2px 2px at 18% 38%, #fff8e1 50%, transparent 51%),
-        radial-gradient(5px 5px at 18% 38%, rgba(255, 240, 200, 0.3), transparent 70%),
-        radial-gradient(1.5px 1.5px at 62% 58%, #fff8e1 50%, transparent 51%);
-    }
-
-    .sky-inner {
-      position: relative;
-      z-index: 1;
-      padding-top: clamp(3rem, 10vw, 6rem);
-      padding-bottom: clamp(1.5rem, 4vw, 2.5rem);
-    }
-
-    .wordmark {
-      margin: 0;
-      font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-      font-weight: 600;
-      font-size: clamp(2.25rem, 8vw, 3.5rem);
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-    }
-
-    .tagline {
-      margin: 1rem 0 0;
-      max-width: 34rem;
-      font-size: clamp(1.0625rem, 2.6vw, 1.25rem);
-      color: var(--sky-muted);
-    }
-
-    .treeline {
-      position: relative;
-      z-index: 1;
-      display: block;
-      width: 100%;
-      height: auto;
-      color: var(--silhouette);
-      margin-bottom: -1px;
-    }
-
-    /* ---------- Main content ---------- */
-    main.wrap { padding-top: 2.5rem; padding-bottom: 3rem; }
-
-    section + section { margin-top: 2.75rem; }
-
-    h2 {
-      margin: 0 0 1rem;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    h3 {
-      margin: 0 0 0.25rem;
-      font-size: 1.125rem;
-      line-height: 1.35;
-    }
-
-    p { margin: 0; }
-
-    .lead { font-size: 1.125rem; }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem 1.25rem 1.375rem;
-    }
-
-    .card p { color: var(--muted); }
-
-    .product-name { letter-spacing: 0.08em; }
-
-    a {
-      color: var(--link);
-      text-underline-offset: 0.18em;
-    }
-
-    a:hover { text-decoration-thickness: 2px; }
-
-    a:focus-visible {
-      outline: 2px solid var(--link);
-      outline-offset: 3px;
-      border-radius: 3px;
-    }
-
-    .contact-email {
-      font-size: 1.25rem;
-      font-weight: 600;
-      word-break: break-word;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.5rem 0 2.5rem;
-      color: var(--muted);
-      font-size: 0.9375rem;
-    }
-  </style>
+  <link rel="stylesheet" href="/site.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
   <header class="sky">
+    <div class="wrap topbar">
+      <a class="brand" href="/"><img src="/favicon.svg" width="28" height="28" alt="">Seven Oaks Digital</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/about/">About</a>
+        <a href="/lexsum/">LEXSUM</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+      </nav>
+    </div>
     <div class="wrap sky-inner">
       <h1 class="wordmark">Seven Oaks Digital</h1>
-      <p class="tagline">An independent software studio in Silver Spring, Maryland, making mobile games and apps.</p>
+      <p class="tagline">An independent software studio in Silver Spring, Maryland. We make mobile games and apps for iPhone and Android.</p>
     </div>
-    <svg class="treeline" viewBox="0 0 1200 150" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false">
-      <defs>
-        <!-- Spreading oak: flared trunk, three branches, wide lobed canopy. Base at (0,0). -->
-        <g id="oak">
-          <path d="M-13 0 Q-5 -3 -5 -14 L-5 -26 L5 -26 L5 -14 Q5 -3 13 0 Z" />
-          <g fill="none" stroke-linecap="round" stroke-width="6">
-            <path d="M-2 -22 Q-12 -30 -26 -42" />
-            <path d="M2 -22 Q12 -32 24 -44" />
-            <path d="M0 -24 L2 -50" stroke-width="5" />
-          </g>
-          <circle cx="-44" cy="-49" r="12" />
-          <circle cx="-31" cy="-58" r="16" />
-          <circle cx="-14" cy="-66" r="17" />
-          <circle cx="4" cy="-68" r="18" />
-          <circle cx="21" cy="-63" r="16" />
-          <circle cx="35" cy="-55" r="15" />
-          <circle cx="46" cy="-47" r="10" />
-          <circle cx="-24" cy="-47" r="12" />
-          <circle cx="0" cy="-53" r="14" />
-          <circle cx="24" cy="-48" r="12" />
-          <circle cx="-37" cy="-43" r="8" />
-          <circle cx="39" cy="-42" r="8" />
-        </g>
-      </defs>
-      <g fill="currentColor" stroke="currentColor">
-        <path d="M0 150 L0 138 Q300 126 600 134 Q900 142 1200 130 L1200 150 Z" stroke="none" />
-        <use href="#oak" transform="translate(95 138) scale(0.8)" />
-        <use href="#oak" transform="translate(262 134) scale(1)" />
-        <use href="#oak" transform="translate(425 133) scale(0.85)" />
-        <use href="#oak" transform="translate(600 135) scale(1.2)" />
-        <use href="#oak" transform="translate(775 138) scale(0.9)" />
-        <use href="#oak" transform="translate(940 136) scale(1.05)" />
-        <use href="#oak" transform="translate(1105 132) scale(0.8)" />
-      </g>
-    </svg>
+    <img class="treeline" src="/treeline.svg" width="1200" height="150" alt="">
   </header>
 
-  <main class="wrap">
+  <main id="main" class="wrap">
     <section aria-labelledby="what-we-do">
       <h2 id="what-we-do">What we do</h2>
-      <p class="lead">We develop and publish our own mobile games and apps for iOS and Android.</p>
+      <p class="lead">We design, build and publish our own mobile games and apps for iPhone and Android.</p>
+      <ul class="grid" style="margin-top:1.5rem">
+        <li class="card">
+          <h3>Our own apps</h3>
+          <p>We make the games and apps we want to play and use, and we publish them ourselves.</p>
+        </li>
+        <li class="card">
+          <h3>Private by default</h3>
+          <p>Our apps collect only what they need to work. We don't sell your data or use it to target ads.</p>
+        </li>
+        <li class="card">
+          <h3>Easy to read</h3>
+          <p>Light and dark themes and clear, readable type, so more people can play.</p>
+        </li>
+      </ul>
     </section>
 
     <section aria-labelledby="now-building">
       <h2 id="now-building">Now building</h2>
       <article class="card">
+        <!-- TODO(screenshot): the plan asks for one LEXSUM screenshot in this feature. -->
         <h3 class="product-name">LEXSUM</h3>
-        <p>A word-and-math puzzle game for iOS and Android, currently in development.</p>
+        <p>A word-and-math game for iPhone and Android. Spell words, add and subtract them, and hit the target number. It's in testing now and coming soon.</p>
+        <div class="actions">
+          <a class="button" href="/lexsum/">About LEXSUM</a>
+          <a href="https://lexsum.app/">Visit lexsum.app</a>
+        </div>
       </article>
     </section>
 
-    <section aria-labelledby="contact">
-      <h2 id="contact">Contact</h2>
-      <p><a class="contact-email" href="mailto:hello@sevenoaks.digital">hello@sevenoaks.digital</a></p>
+    <section aria-labelledby="studio">
+      <h2 id="studio">The studio</h2>
+      <p>Seven Oaks Digital, L.L.C. was founded in 2026 in Silver Spring, Maryland. <a href="/about/">More about us</a></p>
+      <p>Questions, support or press: <a href="/contact/">get in touch</a>.</p>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">
-      <p>© 2026 Seven Oaks Digital, L.L.C. · Silver Spring, Maryland.</p>
+    <div class="wrap footer-inner">
+      <address class="footer-legal">
+        <strong>Seven Oaks Digital, L.L.C.</strong><br>
+        16 Eastmoor Dr, Silver Spring, MD 20901
+      </address>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/about/">About</a>
+        <a href="/lexsum/">LEXSUM</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy</a>
+      </nav>
+      <p class="copyright">© 2026 Seven Oaks Digital, L.L.C.</p>
     </div>
   </footer>
 </body>
